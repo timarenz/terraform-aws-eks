@@ -17,3 +17,7 @@ output "endpoint" {
 output "ca_certificate" {
   value = aws_eks_cluster.main.certificate_authority[0].data
 }
+
+output "oidc" {
+  value = aws_eks_cluster.main.identity[0].oidc[0]
+}
