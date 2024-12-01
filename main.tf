@@ -52,6 +52,11 @@ resource "aws_eks_cluster" "main" {
     endpoint_public_access = true
     public_access_cidrs = var.public_access_cidr_blocks
   }
+
+  access_config {
+    authentication_mode  = "API_AND_CONFIG_MAP"
+  }
+
 }
 
 resource "aws_iam_role" "eks_node_group" {
